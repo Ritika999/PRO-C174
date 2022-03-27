@@ -133,43 +133,7 @@ AFRAME.registerComponent("atoms", {
 
       atom.appendChild(orbit);
 
-      //Create electron revolution animation entity
-      var electronGroup = document.createElement("a-entity");
-      electronGroup.setAttribute("id", `electron-group-${elementName}`);
-      electronGroup.setAttribute("rotation", {
-        x: 0,
-        y: 0,
-        z: electronAngle
-      });
-
-      electronAngle += 65;
-
-      electronGroup.setAttribute("animation", {
-        property: "rotation",
-        to: `0 0 -360`,
-        loop: "true",
-        dur: 3500,
-        easing: "linear"
-      });
-
-      orbit.appendChild(electronGroup);
-
-      //Create electron
-      var electron = document.createElement("a-entity");
-      electron.setAttribute("id", `electron-${elementName}`);
-      electron.setAttribute("geometry", {
-        primitive: "sphere",
-        radius: 0.02
-      });
-
-      electron.setAttribute("material", { color: "#0d47a1", opacity: 0.6 });
-      electron.setAttribute("position", {
-        x: 0.2,
-        y: 0.2,
-        z: 0
-      });
-
-      electronGroup.appendChild(electron);
+     
 
 
     }
